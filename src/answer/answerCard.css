@@ -26,3 +26,9 @@
   font-size: 14px;
   color: #666;
 }
+.mark-as-solution {
+  margin-right: 10px;
+}
+.tick {
+  color:rgb(70, 122, 17);
+}
