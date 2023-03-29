@@ -5,6 +5,11 @@ import AnswerCard from "./AnswerCard";
 const AnswerList = ({questionId}) => {
   const { isPending, data, error } = useFetch('/answers/answers_of_question/' + questionId)
   return (
+    //TODO: isSolution & hasSolution
+    /*
+      Change isSolution and hasSolution to the corresponding variable which is returned from data. Ask Klavora to extend the answer table
+      with these columns and edit the already existing SQL query in the controller to return the datas too.
+    */
     <div>
       <h1>Answers</h1>
       {isPending && <p>Loading...</p>}

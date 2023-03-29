@@ -7,6 +7,12 @@ function AnswerCard({ desc, clientId, date, isSolution, hasSolution }) {
   const [isMarked, setIsMarked] = useState(false);
   const selectSolution = () => {
     setIsMarked(true);
+    //TODO: Post the changes and check if has right to mark answer as solution.
+    /*
+        Post the changes to answer tabel to update isSolution and hasSolution columns with useFetchPost.
+        Extend the code with a paramater which can decide if the current client who watching the asnwer detail site
+        has right to mark an answer as solution or not.
+    */
   }
   return (
     <div className="answer-card">
