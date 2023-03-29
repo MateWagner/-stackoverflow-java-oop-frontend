@@ -4,4 +4,4 @@ const dateConverter = (dateString) => {
   return date.toLocaleDateString('en-US', options);
 }
 
-module.exports = dateConverter;
+export default dateConverter;
