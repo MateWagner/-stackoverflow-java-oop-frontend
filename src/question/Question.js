@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom'
-import Answer from '../answer/Answer';
+import Answer from '../answer/AnswerPanel';
 const Question = () => {
   const { id } = useParams();
   return (

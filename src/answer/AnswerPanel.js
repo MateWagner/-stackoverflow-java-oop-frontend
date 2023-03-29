@@ -1,8 +1,8 @@
 import React from 'react';
-import './answer.css';
+import './answerPanel.css';
 import { useState } from 'react';
 import useFetchPost from '../api/useFetchPost';
-const Answer = () => {
+const AnswerPanel = () => {
   const { postAsync } = useFetchPost();
   const [answerContent, setAnswerContent] = useState('');
   const contentChange = event => { setAnswerContent(event.target.value); }
@@ -26,4 +26,4 @@ const Answer = () => {
   )
 }
 
-export default Answer;
+export default AnswerPanel;
