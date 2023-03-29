@@ -1,9 +1,8 @@
 import React from 'react'
 
-function AnswerCard(clientName, desc) {
+function AnswerCard(desc) {
   return (
     <div>
-      <h3>{clientName}</h3>
       <h4>{desc}</h4>
     </div>
   )
