@@ -7,7 +7,7 @@ function AnswerCard({ desc, clientId, date }) {
     <div className="answer-card">
       <div className="answer-desc">{desc}</div>
       <div className="answer-details">
-        <div className="answer-giver">{error ? "error" : (isPending ? "?" : data.name)}</div>
+        <div className="answer-giver">{error ? "error" : (isPending ? "..." : data.name)}</div>
         <div className="answer-date">{date}</div>
       </div>
     </div>
