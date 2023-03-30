@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import { UserContext } from "../UserContext";
 
-const AddNewQuestion = ({ userId }) => {
+const AddNewQuestion = () => {
+  const { user } = useContext(UserContext)
   const [title, setTitle] = useState("")
   const [question, setQuestion] = useState("")
   const navigate = useNavigate()
@@ -13,7 +15,7 @@ const AddNewQuestion = ({ userId }) => {
       body: JSON.stringify({
         title,
         description: question,
-        clientId: userId
+        clientId: user.id
       }),
     }).then(response => response.json())
       .then(data => data)
