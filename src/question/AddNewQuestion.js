@@ -27,7 +27,7 @@ const AddNewQuestion = () => {
       <h2>Title: </h2>
       <input type="text" value={title} onChange={(event) => setTitle(event.target.value)} />
       <h2>Question details: </h2>
-      <textarea name="question" id="" cols="30" rows="10" value={question} onChange={(event) => setQuestion(event.target.value)}></textarea>
+      <textarea name="question" id="question" cols="30" rows="10" value={question} onChange={(event) => setQuestion(event.target.value)}></textarea>
       <div>
         <button onClick={() => sendNewQuestion()}>Send Question</button>
       </div>
