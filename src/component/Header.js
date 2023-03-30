@@ -16,7 +16,7 @@ const Header = () => {
       <div><h1>Full Stack Overflow</h1></div>
       <div>
         <Link to={'/new/question'}>Add New Question</Link>
-        <label for="cars">Choose a user:</label>
+        <label htmlFor="user">Choose a user:</label>
         {data && <select name="user" id="user" onChange={event => changeUser(event.target.value)}>
           <option value="none">Select</option>
           {data.map(actual => <option key={actual.id} value={actual.id}>{actual.name}</option>)}
