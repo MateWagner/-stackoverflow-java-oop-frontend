@@ -1,0 +1,23 @@
+.question-card {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.question-card-date {
+  font-size: 14px;
+  color: #666;
+  font-size: larger;
+}
+
+.question-card-bottom-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.question-card-answer-number {
+  font-size: large;
+}
