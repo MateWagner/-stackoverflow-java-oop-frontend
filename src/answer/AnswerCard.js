@@ -6,7 +6,7 @@ function AnswerCard({ desc, clientId, date, isSolution, hasSolution }) {
   const { isPending, data, error } = useFetch('/client/' + clientId);
   const [isMarked, setIsMarked] = useState(false);
   const selectSolution = () => {
-    setIsMarked(true);
+    setIsMarked(!isMarked);
     //TODO: Post the changes and check if has right to mark answer as solution.
     /*
         Post the changes to answer tabel to update isSolution and hasSolution columns with useFetchPost.
