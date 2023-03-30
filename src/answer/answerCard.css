@@ -1,0 +1,34 @@
+.answer-card {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 3px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.answer-desc {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.answer-details {
+  display: flex;
+  align-items: center;
+}
+
+.answer-giver {
+  font-size: 14px;
+  color: #666;
+  margin-right: 10px;
+}
+
+.answer-date {
+  font-size: 14px;
+  color: #666;
+}
+.mark-as-solution {
+  margin-right: 10px;
+}
+.tick {
+  color:rgb(70, 122, 17);
+}
