@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import dateConverter from '../util/dateConverter'
 
 const QuestionCard = ({ question }) => {
   return (
@@ -8,6 +9,9 @@ const QuestionCard = ({ question }) => {
       </div>
       <div className="question-answer-number">
         {question.answerCount}
+      </div>
+      <div>
+        {dateConverter(question.date)}
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom'
+import useFetch from './api/useFetch';
 import Header from './component/Header';
 import AddNewQuestion from './question/AddNewQuestion';
 import Question from './question/Question';
@@ -8,10 +9,13 @@ import { UserContext } from './UserContext'
 
 function App() {
   const [user, setUser] = useState(null)
+  const [url] = useState("/client/all")
+  const { data, isPending } = useFetch(url)
+  console.log(isPending);
   return (
     <div className="App">
       <UserContext.Provider value={{ user, setUser }}>
-        <Header />
+        {!isPending && <Header users={data} />}
         <div className='content'>
           <Routes>
             <Route path='/' element={<QuestionList />} />
