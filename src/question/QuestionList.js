@@ -1,4 +1,5 @@
-import { useState } from "react";
+import './question_list.css'
+import { useEffect, useState } from "react";
 import useFetch from "../api/useFetch"
 import QuestionOrder from "../component/QuestionOrder";
 import QuestionCard from "./QuestionCard";
@@ -10,9 +11,12 @@ const Home = () => {
   const changeUrl = (url) => { setUrl(url) }
 
   return (
-    <div>
+    <div className="question-list">
       <h1>Questions</h1>
-      <QuestionOrder onChange={changeUrl} />
+      <div className='question-list-dropdown'>
+        <QuestionOrder onChange={changeUrl} />
+      </div>
+      <div className='question-list-spacer'></div>
       {isPending && <p>Loading...</p>}
       {error && <h1> {error} </h1>}
       {data &&

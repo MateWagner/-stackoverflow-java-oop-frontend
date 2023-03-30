@@ -15,9 +15,10 @@ const Header = ({ users }) => {
   return (
     <nav>
       <div><h1>Full Stack Overflow</h1></div>
-      <div>
+      <div className='header-menu'>
+        <Link to={'/'}>Home</Link>
         <Link to={'/new/question'}>Add New Question</Link>
-        <label for="cars">Choose a user:</label>
+        <label for="userSelect">Choose a user:</label>
         {users && <select name="userSelect" id="userSelect" value={currentUserId} onChange={event => changeUser(event.target.value)}>
           {users.map(actual => <option key={actual.id} value={actual.id}>{actual.name}</option>)}
         </select>}

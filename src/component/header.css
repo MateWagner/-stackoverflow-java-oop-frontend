@@ -3,4 +3,30 @@ nav {
   top: 0;
   padding: 1px;
   background-color: rgb(168, 168, 168);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  padding-right: 10px;
+  font-size: medium;
+  font-weight: 500;
+}
+
+nav select {
+  margin-right: 20px;
+  font-size: medium;
+}
+
+nav label {
+  font-size: medium;
+  font-weight: 500;
+  padding-right: 5px;
 }
