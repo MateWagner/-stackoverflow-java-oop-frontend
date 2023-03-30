@@ -11,7 +11,7 @@ const Home = () => {
       {isPending && <p>Loading...</p>}
       {error && <h1> {error} </h1>}
       {data &&
-        data.map((question) => <QuestionCard key={question.id} question={question} />)}
+        data.map((question) => <QuestionCard key={question.id} question={question} solutionAnswerId={question.solutionAnswerId} />)}
     </div>
   );
 }
