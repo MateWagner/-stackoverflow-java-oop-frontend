@@ -18,7 +18,7 @@ const Header = ({ users }) => {
       <div className='header-menu'>
         <Link to={'/'}>Home</Link>
         <Link to={'/new/question'}>Add New Question</Link>
-        <label for="userSelect">Choose a user:</label>
+        <label htmlFor="userSelect">Choose a user:</label>
         {users && <select name="userSelect" id="userSelect" value={currentUserId} onChange={event => changeUser(event.target.value)}>
           {users.map(actual => <option key={actual.id} value={actual.id}>{actual.name}</option>)}
         </select>}
