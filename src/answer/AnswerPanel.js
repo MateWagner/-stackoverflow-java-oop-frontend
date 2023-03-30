@@ -2,24 +2,25 @@ import React from 'react';
 import './answerPanel.css';
 import { useState } from 'react';
 import useFetchPost from '../api/useFetchPost';
-const AnswerPanel = () => {
+import { useContext } from 'react';
+import { UserContext } from '../UserContext';
+const AnswerPanel = ({questionId}) => {
   const { postAsync } = useFetchPost();
+  const { user } = useContext(UserContext)
   const [answerContent, setAnswerContent] = useState('');
   const contentChange = event => { setAnswerContent(event.target.value); }
-  //TODO: Replace hard-coded values and make changes on site without reloading the page.
+  //TODO: Render changes on site without reloading the page.
   /*  
-      Change the hard coded parameters (questionId & clientId) of new answer
-      posting when login already working and we can get the ID of current client.
-
       Use the returned ID of the newly posted answer to extend the AnswerList, so
       we don't have to reload the site for seeing changes.
   */
   const postNewAnswer = async () => {
+    console.log(user);
     const url = 'answers';
     const answerObject = {
       'desc': answerContent,
-      'questionId': 1,
-      'clientId': 1
+      'questionId': questionId,
+      'clientId': (user != null ? user : 1)
     }
     const returnedIdOfAnswer = await postAsync(url, answerObject);
     console.log(returnedIdOfAnswer);
