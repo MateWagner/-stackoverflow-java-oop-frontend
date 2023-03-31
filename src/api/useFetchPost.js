@@ -1,7 +1,7 @@
 const useFetchPost = () => {
   const postAsync = async (url, answerObject) => {
     try {
-      const response = await fetch(`/${url}/`, {
+      const response = await fetch("http://192.168.0.32:8080"  + (!(url[0] === "/") ? "/" : "") + url, {
         method: "POST",
         body: JSON.stringify(answerObject),
         headers: {
@@ -9,6 +9,7 @@ const useFetchPost = () => {
         }
       });
       if (!response.ok) {
+        console.log(answerObject);
         throw new Error("Failed to post to table: " + url);
       }
       const id = await response.json();

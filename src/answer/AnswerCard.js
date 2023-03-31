@@ -4,7 +4,7 @@ import useFetch from '../api/useFetch';
 import useFetchPost from '../api/useFetchPost';
 
 function AnswerCard({ questionId, answerId, desc, clientId, date, isSolution, hasSolution }) {
-  const { isPending, data, error } = useFetch('/client/' + clientId);
+  const { isPending, data, error } = useFetch('api/client/' + clientId);
   const [isMarked, setIsMarked] = useState(false);
   const { postAsync } = useFetchPost();
   const selectSolution = () => {
@@ -18,7 +18,7 @@ function AnswerCard({ questionId, answerId, desc, clientId, date, isSolution, ha
     */
   }
   const postSolution = async () => {
-    const url = 'questions/solution';
+    const url = '/api/questions/solution';
     const answerObject = {
       'questionId': questionId,
       'answerId': answerId,

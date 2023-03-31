@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../UserContext";
+import UseFetchPost from "../api/useFetchPost";
 
 const AddNewQuestion = () => {
   const { user } = useContext(UserContext)
@@ -8,20 +9,29 @@ const AddNewQuestion = () => {
   const [question, setQuestion] = useState("")
   const navigate = useNavigate()
 
+  /*const postNewAnswer = async () => {
+    const url = 'api/question/';
+    const answerObject = {
+      'title': title,
+      'description': question,
+      'clientId': (user != null ? user.id : 1)
+    }
+    const returnedIdOfNewQuestion = postAsync(url, answerObject);
+    if (returnedIdOfNewQuestion > 0) navigate(`/question/${returnedIdOfNewQuestion}`);
+    console.log(returnedIdOfNewQuestion);
+  }*/
   async function sendNewQuestion() {
-    const newQuestionId = await fetch("/questions/", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        title,
-        description: question,
-        clientId: user.id
-      }),
-    }).then(response => response.json())
-      .then(data => data)
-      .catch(err => console.log(err))
+    const { postAsync } = UseFetchPost();
+  
+    const newQuestionId = await postAsync("api/questions/", {
+      title,
+      description: question,
+      clientId: (user != null ? user.id : 1)
+    });
+  
     if (newQuestionId > 0) navigate(`/question/${newQuestionId}`);
   }
+
   return (
     <div>
       <h2>Title: </h2>

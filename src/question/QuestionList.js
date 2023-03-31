@@ -5,7 +5,7 @@ import QuestionOrder from "../component/QuestionOrder";
 import QuestionCard from "./QuestionCard";
 
 const Home = () => {
-  const [url, setUrl] = useState('/questions/all')
+  const [url, setUrl] = useState('api/questions/all')
   const { isPending, data, error } = useFetch(url)
 
   const changeUrl = (url) => { setUrl(url) }

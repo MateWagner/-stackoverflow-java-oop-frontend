@@ -9,7 +9,7 @@ import { UserContext } from './UserContext'
 
 function App() {
   const [user, setUser] = useState(null)
-  const [url] = useState("/client/all")
+  const [url] = useState("api/client/all")
   const { data, isPending } = useFetch(url)
   console.log(isPending);
   return (

@@ -5,22 +5,21 @@ import useFetchPost from '../api/useFetchPost';
 import { useContext } from 'react';
 import { UserContext } from '../UserContext';
 const AnswerPanel = ({questionId}) => {
-  const { postAsync } = useFetchPost();
   const { user } = useContext(UserContext)
   const [answerContent, setAnswerContent] = useState('');
   const contentChange = event => { setAnswerContent(event.target.value); }
   //TODO: Render changes on site without reloading the page.
   /*  
-      Use the returned ID of the newly posted answer to extend the AnswerList, so
-      we don't have to reload the site for seeing changes.
+  Use the returned ID of the newly posted answer to extend the AnswerList, so
+  we don't have to reload the site for seeing changes.
   */
+ const { postAsync } = useFetchPost();
   const postNewAnswer = async () => {
-    console.log(user);
-    const url = 'answers';
+    const url = 'api/answers/';
     const answerObject = {
       'desc': answerContent,
       'questionId': questionId,
-      'clientId': (user != null ? user : 1)
+      'clientId': (user != null ? user.id : 1)
     }
     const returnedIdOfAnswer = await postAsync(url, answerObject);
     console.log(returnedIdOfAnswer);
