@@ -23,7 +23,7 @@ function AnswerCard({ questionId, answerId, desc, clientId, date, isSolution, ha
       'questionId': questionId,
       'answerId': answerId,
     }
-    const returnedIdOfAnswer = await postAsync(url, answerObject);
+    const returnedIdOfAnswer = await postAsync(url, answerObject, "PATCH");
     console.log("Ez a valasz updatelodott: " + returnedIdOfAnswer);
   }
   return (

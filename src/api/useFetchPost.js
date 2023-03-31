@@ -1,8 +1,8 @@
 const useFetchPost = () => {
-  const postAsync = async (url, answerObject) => {
+  const postAsync = async (url, answerObject, method) => {
     try {
-      const response = await fetch("http://192.168.0.32:8080"  + (!(url[0] === "/") ? "/" : "") + url, {
-        method: "POST",
+      const response = await fetch((!(url[0] === "/") ? "/" : "") + url, {
+        method: (method ?? "POST"),
         body: JSON.stringify(answerObject),
         headers: {
           "Content-Type": "application/json"

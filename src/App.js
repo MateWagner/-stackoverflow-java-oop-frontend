@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import useFetch from './api/useFetch';
 import Header from './component/Header';
 import AddNewQuestion from './question/AddNewQuestion';
-import Question from './question/Question';
+import QuestionPage from './question/QuestionPage';
 import QuestionList from './question/QuestionList';
 import { UserContext } from './UserContext'
 
@@ -20,7 +20,7 @@ function App() {
           <Routes>
             <Route path='/' element={<QuestionList />} />
             <Route path='/new/question' element={<AddNewQuestion />} />
-            <Route path='question/:id' element={<Question />} />
+            <Route path='question/:id' element={<QuestionPage/>} />
           </Routes>
         </div>
       </UserContext.Provider>
