@@ -1,0 +1,53 @@
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f8f8f8;
+  resize: none;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  height: 50px;
+}
+
+button {
+  background-color: #0077cc;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #006db3;
+}
+
+button:active {
+  background-color: #005fa3;
+}
+
+.error {
+  color: #f00;
+  font-size: 14px;
+  margin-top: 10px;
+}

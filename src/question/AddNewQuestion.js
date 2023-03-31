@@ -2,24 +2,13 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../UserContext";
 import UseFetchPost from "../api/useFetchPost";
-
+import "./addNewQuestion.css";
 const AddNewQuestion = () => {
   const { user } = useContext(UserContext)
   const [title, setTitle] = useState("")
   const [question, setQuestion] = useState("")
   const navigate = useNavigate()
 
-  /*const postNewAnswer = async () => {
-    const url = 'api/question/';
-    const answerObject = {
-      'title': title,
-      'description': question,
-      'clientId': (user != null ? user.id : 1)
-    }
-    const returnedIdOfNewQuestion = postAsync(url, answerObject);
-    if (returnedIdOfNewQuestion > 0) navigate(`/question/${returnedIdOfNewQuestion}`);
-    console.log(returnedIdOfNewQuestion);
-  }*/
   async function sendNewQuestion() {
     const { postAsync } = UseFetchPost();
   

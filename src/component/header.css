@@ -2,10 +2,12 @@ nav {
   position: sticky;
   top: 0;
   padding: 1px;
-  background-color: rgb(168, 168, 168);
+  background: linear-gradient(to bottom, #413543, #2D2727);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
 }
 
 .header-menu {
@@ -15,18 +17,49 @@ nav {
 }
 
 nav a {
-  padding-right: 10px;
-  font-size: medium;
+  padding: 10px;
+  font-size: 18px;
   font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  margin-right: 10px;
+}
+
+nav a:hover {
+  color: #f7b924;
 }
 
 nav select {
   margin-right: 20px;
-  font-size: medium;
+  font-size: 18px;
+  background-color: transparent;
+  border: none;
+  color: #000;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  transition: color 0.3s ease-in-out;
+}
+
+nav select:hover, nav select:focus {
+  color: #f7b924;
+}
+
+nav option {
+  color: #000;
 }
 
 nav label {
-  font-size: medium;
+  font-size: 18px;
   font-weight: 500;
-  padding-right: 5px;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  margin-right: 5px;
+}
+
+nav h1 {
+  margin-left: 10px;
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
