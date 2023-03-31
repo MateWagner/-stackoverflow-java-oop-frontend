@@ -1,9 +1,9 @@
-import useFetch from "../api/useFetch"
+import useFetch2 from "../api/useFetch2"
 import dateConverter from "../util/dateConverter";
 import AnswerCard from "./AnswerCard";
 
-const AnswerList = ({questionId, solutionAnswerId}) => {
-  const { isPending, data, error } = useFetch('api/answers/answers_of_question/' + questionId)
+const AnswerList = ({ questionId, solutionAnswerId }) => {
+  const { isPending, data, error } = useFetch2('api/answers/answers_of_question/' + questionId)
   return (
     //TODO: isSolution & hasSolution
     /*
@@ -15,7 +15,7 @@ const AnswerList = ({questionId, solutionAnswerId}) => {
       {isPending && <p>Loading...</p>}
       {error && <h1> {error} </h1>}
       {data &&
-        data.map((answer) => <AnswerCard key={answer.id} questionId={questionId} answerId={answer.id} desc={answer.description}  date={dateConverter(answer.date)} clientId={answer.client_id} isSolution={answer.id === solutionAnswerId} hasSolution={solutionAnswerId !== 0} /> )}
+        data.map((answer) => <AnswerCard key={answer.id} questionId={questionId} answerId={answer.id} desc={answer.description} date={dateConverter(answer.date)} clientId={answer.client_id} isSolution={answer.id === solutionAnswerId} hasSolution={solutionAnswerId !== 0} />)}
     </div>
   );
 }

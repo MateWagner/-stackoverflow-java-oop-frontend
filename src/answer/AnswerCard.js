@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './answerCard.css';
-import useFetch from '../api/useFetch';
+import useFetch2 from '../api/useFetch2';
 import useFetchPost from '../api/useFetchPost';
 
 function AnswerCard({ questionId, answerId, desc, clientId, date, isSolution, hasSolution }) {
-  const { isPending, data, error } = useFetch('api/client/' + clientId);
+  const { isPending, data, error } = useFetch2('api/client/' + clientId);
   const [isMarked, setIsMarked] = useState(false);
   const { postAsync } = useFetchPost();
   const selectSolution = () => {
