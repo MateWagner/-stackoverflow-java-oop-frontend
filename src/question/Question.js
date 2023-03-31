@@ -1,17 +1,17 @@
 import React from 'react'
 import useFetch from '../api/useFetch'
+import "./question.css";
 function Question({questionId}) {
-  const url = "api/questions/" + questionId;
+  const url = "api/questions/single/" + questionId;
   const { isPending, data } = useFetch(url)
   if (!isPending){
-    console.log(data)
+    return (
+      <div className='questionPanel'>
+        <h1>{data.title}</h1>
+        <h3>{data.description}</h3>
+      </div>
+    )
   }
-  return (
-    <div className='questionPanel'>
-      <h1>{"tema"}</h1>
-      
-    </div>
-  )
 }
 
 export default Question
