@@ -2,7 +2,7 @@ import React from 'react'
 import useFetch from '../api/useFetch'
 function Question({questionId}) {
   const url = "api/questions/" + questionId;
-  const { isPending, data, error } = useFetch(url)
+  const { isPending, data } = useFetch(url)
   if (!isPending){
     console.log(data)
   }

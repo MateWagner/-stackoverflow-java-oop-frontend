@@ -1,5 +1,5 @@
 import './question_list.css'
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useFetch from "../api/useFetch"
 import QuestionOrder from "../component/QuestionOrder";
 import QuestionCard from "./QuestionCard";
