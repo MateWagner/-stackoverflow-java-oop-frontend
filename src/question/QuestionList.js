@@ -1,14 +1,10 @@
 import './question_list.css'
-import { useState } from "react";
-import useFetch from "../api/useFetch"
 import QuestionOrder from "../component/QuestionOrder";
 import QuestionCard from "./QuestionCard";
 
-const Home = () => {
-  const [url, setUrl] = useState('api/questions/all')
-  const { isPending, data, error } = useFetch(url)
+const QuestionList = ({ questions, onChange }) => {
 
-  const changeUrl = (url) => { setUrl(url) }
+  const changeUrl = (url) => { onChange(url) }
 
   return (
     <div className="question-list">
@@ -17,12 +13,9 @@ const Home = () => {
         <QuestionOrder onChange={changeUrl} />
       </div>
       <div className='question-list-spacer'></div>
-      {isPending && <p>Loading...</p>}
-      {error && <h1> {error} </h1>}
-      {data &&
-        data.map((question) => <QuestionCard key={question.id} question={question} solutionAnswerId={question.solutionAnswerId} />)}
+      {questions.map((question) => <QuestionCard key={question.id} question={question} solutionAnswerId={question.solutionAnswerId} />)}
     </div>
   );
 }
 
-export default Home;
+export default QuestionList;

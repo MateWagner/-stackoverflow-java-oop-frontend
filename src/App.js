@@ -4,8 +4,8 @@ import useFetch from './api/useFetch';
 import Header from './component/Header';
 import AddNewQuestion from './question/AddNewQuestion';
 import QuestionPage from './question/QuestionPage';
-import QuestionList from './question/QuestionList';
 import { UserContext } from './UserContext'
+import QuestionHome from './question/QuestionHome';
 
 function App() {
   const [user, setUser] = useState(null)
@@ -18,9 +18,9 @@ function App() {
         {!isPending && <Header users={data} />}
         <div className='content'>
           <Routes>
-            <Route path='/' element={<QuestionList />} />
+            <Route path='/' element={<QuestionHome />} />
             <Route path='/new/question' element={<AddNewQuestion />} />
-            <Route path='question/:id' element={<QuestionPage/>} />
+            <Route path='question/:id' element={<QuestionPage />} />
           </Routes>
         </div>
       </UserContext.Provider>

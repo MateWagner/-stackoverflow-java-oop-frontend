@@ -1,10 +1,10 @@
 import React from 'react'
-import useFetch from '../api/useFetch'
+import useFetch2 from '../api/useFetch2'
 import "./question.css";
-function Question({questionId}) {
+function Question({ questionId }) {
   const url = "api/questions/single/" + questionId;
-  const { isPending, data } = useFetch(url)
-  if (!isPending){
+  const { isPending, data } = useFetch2(url)
+  if (!isPending) {
     return (
       <div className='questionPanel'>
         <h1>{data.title}</h1>
