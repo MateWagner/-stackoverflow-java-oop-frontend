@@ -7,7 +7,7 @@ const Header = ({ users }) => {
   const [currentUserId, setCurrentUserId] = useState("")
   const { user, setUser } = useContext(UserContext)
   const changeUser = (id) => {
-    const currentUser = users.reduce((acc, corr) => corr.id === Number(id) ? corr : acc, null)
+    const currentUser = users && users.reduce((acc, corr) => corr.id === Number(id) ? corr : acc, null)
     setCurrentUserId(id)
     setUser(currentUser)
   }

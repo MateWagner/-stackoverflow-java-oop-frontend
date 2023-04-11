@@ -6,6 +6,7 @@ import AddNewQuestion from './question/AddNewQuestion';
 import QuestionPage from './question/QuestionPage';
 import { UserContext } from './UserContext'
 import QuestionHome from './question/QuestionHome';
+import ProfilePage from './profile/ProfilePage';
 
 function App() {
   const [user, setUser] = useState(null)
@@ -15,12 +16,13 @@ function App() {
   return (
     <div className="App">
       <UserContext.Provider value={{ user, setUser }}>
-        {!isPending && <Header users={data} />}
+        {<Header users={data}/>}
         <div className='content'>
           <Routes>
             <Route path='/' element={<QuestionHome />} />
             <Route path='/new/question' element={<AddNewQuestion />} />
-            <Route path='question/:id' element={<QuestionPage />} />
+            <Route path='/question/:id' element={<QuestionPage />} />
+            <Route path='/profile/:id' element={<ProfilePage/>}/>
           </Routes>
         </div>
       </UserContext.Provider>
