@@ -6,21 +6,42 @@ import AddNewQuestion from './question/AddNewQuestion';
 import QuestionPage from './question/QuestionPage';
 import { UserContext } from './UserContext'
 import QuestionHome from './question/QuestionHome';
+import SingeIn from './login/SingeIn';
+import LoginForm from './login/LoginForm';
 
 function App() {
   const [user, setUser] = useState(null)
-  const [url] = useState("api/client/all")
-  const { data, isPending } = useFetch(url)
-  console.log(isPending);
+
+  const setUserObject = (userToLogin) => {
+    setUser(userToLogin)
+    localStorage.setItem('user', JSON.stringify(userToLogin))
+  }
+
+  if (!user) {
+    const localUser = JSON.parse(localStorage.getItem('user'))
+    if (localUser) {
+      setUser(localUser);
+    }
+    else {
+      return (
+        <div className='App'>
+          <LoginForm setUserObject={setUserObject} />
+        </div>
+      );
+    }
+  };
+
   return (
     <div className="App">
       <UserContext.Provider value={{ user, setUser }}>
-        {!isPending && <Header users={data} />}
+        <Header />
         <div className='content'>
           <Routes>
             <Route path='/' element={<QuestionHome />} />
+            <Route path='/login' element={<LoginForm />} />
             <Route path='/new/question' element={<AddNewQuestion />} />
             <Route path='question/:id' element={<QuestionPage />} />
+            <Route path='singe-in' element={<SingeIn />} />
           </Routes>
         </div>
       </UserContext.Provider>

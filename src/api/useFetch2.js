@@ -19,7 +19,7 @@ const useFetch = (url) => {
 
   useEffect(() => {
     const abort = new AbortController();
-    fetch((!(url[0] === "/") ? "/" : "") + url, { signal: abort.signal })
+    fetch((url[0] !== "/" ? "/" : "") + url, { signal: abort.signal })
       .then((res) => {
         if (!res.ok) throw Error("There must be a problem");
         return res.json();
