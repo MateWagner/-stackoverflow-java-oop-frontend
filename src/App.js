@@ -25,7 +25,10 @@ function App() {
     else {
       return (
         <div className='App'>
-          <LoginForm setUserObject={setUserObject} />
+          <Routes>
+            <Route path='/' element={<LoginForm setUserObject={setUserObject} />} />
+            <Route path='/singe-in' element={<SingeIn />} />
+          </Routes>
         </div>
       );
     }
@@ -41,7 +44,6 @@ function App() {
             <Route path='/login' element={<LoginForm />} />
             <Route path='/new/question' element={<AddNewQuestion />} />
             <Route path='/question/:id' element={<QuestionPage />} />
-            <Route path='singe-in' element={<SingeIn />} />
             <Route path='/profile/:id' element={<ProfilePage />} />
           </Routes>
         </div>

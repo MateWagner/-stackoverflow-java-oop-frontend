@@ -1,14 +1,15 @@
+import './loginForm.css'
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const LoginForm = ({ setUserObject }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState(null)
-  // const { setUser } = useContext(UserContext)
   const navigate = useNavigate()
 
   const login = async () => {
+    setError('')
     const response = await fetch('api/client/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -20,6 +21,8 @@ const LoginForm = ({ setUserObject }) => {
     console.log(response.ok);
     if (!response.ok) {
       setError('No Email or Password Correct')
+      setEmail('')
+      setPassword('')
       return;
     }
     const user = await response.json()
@@ -28,7 +31,7 @@ const LoginForm = ({ setUserObject }) => {
   }
 
   return (
-    <div>
+    <div className="login">
       <div>
         {error && error}
         <label>Email</label>
@@ -37,8 +40,9 @@ const LoginForm = ({ setUserObject }) => {
         <input type="password" value={password} onChange={event => setPassword(event.target.value)} />
       </div>
       <div>
-        <button onClick={() => login()}></button>
+        <button onClick={() => login()}>Login</button>
       </div>
+      <div><Link to={'/singe-in'}>Singe In</Link></div>
     </div>
   );
 }

@@ -1,0 +1,28 @@
+.login {
+  background-color: antiquewhite;
+  width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.login div {
+  margin: 10px;
+}
+
+.login input,
+.login input[type="text"] {
+  width: 450px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f8f8f8;
+  resize: none;
+  margin-bottom: 20px;
+  height: 25px;
+}

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SingeIn = () => {
   const [email, setEmail] = useState('')
@@ -31,7 +31,7 @@ const SingeIn = () => {
   }
 
   return (
-    <div>
+    <div className="login">
       <div>
         {error && error}
         <label>Name</label>
@@ -42,8 +42,9 @@ const SingeIn = () => {
         <input type="password" value={password} onChange={event => setPassword(event.target.value)} />
       </div>
       <div>
-        <button onClick={() => singeIn()}></button>
+        <button onClick={() => singeIn()}>Singe In</button>
       </div>
+      <div><Link to={'/'}>Login</Link></div>
     </div>
   );
 }
