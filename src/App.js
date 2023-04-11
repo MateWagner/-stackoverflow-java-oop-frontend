@@ -8,6 +8,7 @@ import { UserContext } from './UserContext'
 import QuestionHome from './question/QuestionHome';
 import SingeIn from './login/SingeIn';
 import LoginForm from './login/LoginForm';
+import ProfilePage from './profile/ProfilePage';
 
 function App() {
   const [user, setUser] = useState(null)
@@ -40,8 +41,9 @@ function App() {
             <Route path='/' element={<QuestionHome />} />
             <Route path='/login' element={<LoginForm />} />
             <Route path='/new/question' element={<AddNewQuestion />} />
-            <Route path='question/:id' element={<QuestionPage />} />
+            <Route path='/question/:id' element={<QuestionPage />} />
             <Route path='singe-in' element={<SingeIn />} />
+            <Route path='/profile/:id' element={<ProfilePage />} />
           </Routes>
         </div>
       </UserContext.Provider>

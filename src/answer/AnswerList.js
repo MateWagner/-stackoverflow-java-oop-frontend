@@ -1,9 +1,10 @@
+import useFetch from "../api/useFetch2";
 import useFetch2 from "../api/useFetch2"
 import dateConverter from "../util/dateConverter";
 import AnswerCard from "./AnswerCard";
 
 const AnswerList = ({ questionId, solutionAnswerId }) => {
-  const { isPending, data, error } = useFetch2('api/answers/answers_of_question/' + questionId)
+  const { isPending, data, error } = useFetch('api/answers/answers_of_question/' + questionId)
   return (
     //TODO: isSolution & hasSolution
     /*
