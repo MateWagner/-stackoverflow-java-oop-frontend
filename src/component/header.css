@@ -16,6 +16,13 @@ nav {
   align-items: center;
 }
 
+/* nav p {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  margin-right: 15px;
+} */
+
 nav a:visited {
   padding: 10px;
   font-size: 18px;

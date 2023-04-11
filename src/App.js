@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom'
-import useFetch from './api/useFetch';
 import Header from './component/Header';
 import AddNewQuestion from './question/AddNewQuestion';
 import QuestionPage from './question/QuestionPage';

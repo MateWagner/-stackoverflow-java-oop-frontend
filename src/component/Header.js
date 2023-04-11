@@ -12,9 +12,8 @@ const Header = ({ users }) => {
       <div className='header-menu'>
         <Link to={'/'}>Home</Link>
         <Link to={'/new/question'}>Add New Question</Link>
-        <p>Hello: {user.name}</p>
+        <Link to={`/profile/${user.id}`}>Hello: {user.name}</Link>
       </div>
-
     </nav >
   );
 }
