@@ -12,8 +12,7 @@ const Header = ({ users }) => {
       <div className='header-menu'>
         <Link to={'/'}>Home</Link>
         <Link to={'/new/question'}>Add New Question</Link>
-        <label htmlFor="userSelect">Choose a user:</label>
-        <h2>{user.name}</h2>
+        <p>Hello: {user.name}</p>
       </div>
 
     </nav >
