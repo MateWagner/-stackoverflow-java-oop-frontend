@@ -10,7 +10,7 @@ function ProfileCard({clientId}) {
     <div className='columns'>
       <div className='profilDetailsOfClient'>
           <h2>{profilData&&profilData.name}</h2>
-          <p>Questions: {questionData&&questionData.length}</p>
+          <p>Questions: {questionsOfClient&&questionsOfClient.length}</p>
       </div>
       <div className='questionsOfClient'>
         {questionsOfClient&&questionsOfClient.map((question) => <QuestionCard key={question.id} question={question} solutionAnswerId={question.solutionAnswerId} />)}
