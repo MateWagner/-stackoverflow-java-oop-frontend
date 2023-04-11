@@ -1,5 +1,4 @@
-import useFetch from "../api/useFetch2";
-import useFetch2 from "../api/useFetch2"
+import useFetch from "../api/useFetch";
 import dateConverter from "../util/dateConverter";
 import AnswerCard from "./AnswerCard";
 
