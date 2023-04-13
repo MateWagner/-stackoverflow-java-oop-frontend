@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.edit-button {
+  margin-left: auto;
+}
+
 /* unvisited link */
 a:link {
   color: black;

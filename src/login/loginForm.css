@@ -1,5 +1,5 @@
 .login {
-  background-color: antiquewhite;
+  background: linear-gradient(to bottom, #b4b392, #b1bc83);
   width: 500px;
   margin: auto;
   display: flex;

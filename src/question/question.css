@@ -1,3 +1,8 @@
+.questionPanel {
+  display: flex;
+  flex-direction: column;
+}
+
 .questionPanel h1 {
   font-size: 32px;
   font-weight: bold;
@@ -8,4 +13,18 @@
   font-size: 18px;
   color: #4C4C4C;
   margin-bottom: 24px;
+}
+
+.control-panel {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.control-panel button {
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.control-panel .delete {
+  background-color: rgb(231, 62, 62);
 }

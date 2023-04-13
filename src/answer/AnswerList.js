@@ -3,6 +3,7 @@ import AnswerCard from "./AnswerCard";
 
 const AnswerList = ({ answers, solutionAnswerId, changeSolutionId }) => {
   const [hasSolution, setHasSolution] = useState(solutionAnswerId > 0)
+
   const setSolutionState = (state) => {
     setHasSolution(state)
   }

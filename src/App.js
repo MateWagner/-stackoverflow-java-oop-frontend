@@ -8,6 +8,8 @@ import QuestionHome from './question/QuestionHome';
 import SingeIn from './login/SingeIn';
 import LoginForm from './login/LoginForm';
 import ProfilePage from './profile/ProfilePage';
+import EditQuestion from './question/EditQuestion'
+
 
 function App() {
   const [user, setUser] = useState(null)
@@ -44,6 +46,7 @@ function App() {
             <Route path='/login' element={<LoginForm />} />
             <Route path='/new/question' element={<AddNewQuestion />} />
             <Route path='/question/:id' element={<QuestionPage />} />
+            <Route path='/question/edit/:id' element={<EditQuestion />} />
             <Route path='/profile/:id' element={<ProfilePage />} />
           </Routes>
         </div>
